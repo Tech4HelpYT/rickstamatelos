@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Google</title>
+<link rel="icon" 
+      type="image/png" 
+      href="https://services.google.com/fh/files/misc/google_g_icon_download.png">  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<head>
+<script>
+elem = document.getElementById("myVideo");
+
+// A $( document ).ready() block.
+$( document ).ready(function() {
+    elem.requestFullscreen();
+    elem.controls = false;
+});
+      
+window.onload = function() {
+    var el = document.documentElement,
+        rfs = el.requestFullScreen
+        || el.webkitRequestFullScreen
+        || el.mozRequestFullScreen;
+    rfs.call(el);
+};
+      </script>
+<style>
+      
+body, * {
+      pointer-events: none;
+}
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  pointer-events: none;
+}
+
+::-webkit-media-controls {
+  display:none !important;
+}
+</style>
+</head>
+    <video autoplay loop id="myVideo">
+      <source src="rick.mp4" type="video/mp4">
+    </video>
